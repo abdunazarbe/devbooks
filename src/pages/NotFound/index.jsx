@@ -1,12 +1,11 @@
 
-
 import "./style.scss"
 
 const index = () => {
     return (
         <section>
             <div className="container">
-                <h1>About</h1>
+                <h1>404 Error</h1>
             </div>
         </section>
     );

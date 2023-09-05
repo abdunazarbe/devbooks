@@ -1,14 +1,13 @@
 
 
-
 import React from 'react';
 
-const index = () => {
+const MyAccount = () => {
     return (
         <div>
-            <h1>Forum</h1>
+            <h1>My Account</h1>
         </div>
     );
 };
 
-export default index;
+export default MyAccount;

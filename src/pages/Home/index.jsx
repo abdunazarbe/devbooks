@@ -1,15 +1,13 @@
-import {useEffect} from "react";
-import {Button} from "flowbite-react";
 
+import Intro from "../../components/Intro";
+import SearchPanel from "../../components/UI/SearchPanel/SearchPanel";
+import "./style.scss"
 
 const index = () => {
-
-  
-
     return (
         <div>
-            <h1>Home</h1>
-           
+            <Intro/>
+            <SearchPanel/>
         </div>
     );
 };
