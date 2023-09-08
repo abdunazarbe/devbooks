@@ -42,7 +42,7 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: "/author",
+                path: "/auhtor",
                 element: <Author />
             },
             {
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
                 element: <Books />
             },
             {
-                path: "/author/:id",
+                path: "/auhtor/:id",
                 element: <AuthorDetails />
             },
             {
