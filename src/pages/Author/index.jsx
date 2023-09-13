@@ -1,13 +1,11 @@
-
-
 import React from 'react';
 
 const index = () => {
-    return (
-        <div>
-            <h1>Author</h1>
-        </div>
-    );
+  return (
+    <div>
+      
+    </div>
+  );
 };
 
 export default index;

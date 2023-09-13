@@ -43,4 +43,7 @@ body {
   padding: 0 10px;
 }
 
-
+.ant-btn-primary{
+  background-color: blue !important;
+  color: white;
+}
