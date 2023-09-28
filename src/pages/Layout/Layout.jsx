@@ -14,15 +14,12 @@ const Layout = () => {
         </header>
 
         <main>
-            <div className="container">
-                <Outlet/>
-            </div>
-            
+            <Outlet/>
         </main>
         
-        {/* <footer>
+        <footer>
             <Footer/>
-        </footer> */}
+        </footer>
     </div>
     );
 };

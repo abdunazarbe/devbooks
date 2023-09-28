@@ -1,38 +1,55 @@
-import React from "react";
+
+
+import { useEffect, useContext } from "react";
 import { Select, Button } from "flowbite-react";
 import { Switch } from "antd";
-
-
-
+import {langs} from "../../lang/lang";
+import {Localization} from "../../store/store";
 
 const Setting = () => {
+    const {lang, setLang} = useContext(Localization);
+    const t = langs[lang];
+    
     const onChange = (checked) => {
-      console.log(`switch to ${checked}`);
+        console.log(`switch to ${checked}`);
     };
 
-  return (
-    <div className="container">
-      <div className="wrapper">
-        <h1 className=" font-sans my-8 text-2xl">Sozlamalar</h1>
-        <Select id="countries" required className="py-4">
-          <option>UZBEK</option>
-          <option>ENGLISH</option>
-          <option>RUSSIAN</option>
-          <option>DEU</option>
-        </Select>
-        <div className="py-3">
-          <p className=" font-sans my-2">Mavzu</p>
-          <Switch defaultChecked onChange={onChange} />
-        </div>
-        <div className="flex justify-between">
-            <span></span>
-          <Button className=" bg-slate-500 font-sans text-white" htmlType="submit">
-            Saqlash
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
+  
+    useEffect(() => {
+        console.log(langs)
+    }, [])
+
+    return (
+        <section>
+            <div className='container'>
+                <div className="wrapper">
+                    <h1 className='text-2xl my-8'>{t?.settings}</h1>
+
+                    <Select
+                        id="countries"
+                        required
+                        className="py-4"
+                        onChange={(e) => setLang(e.target.value)}
+                    >
+                        <option> UZ </option>
+                        <option> EN </option>
+                        <option> RU </option>
+                    </Select>
+                    <div className="py-3">
+                        <p className="my-2">{t?.theme}:</p>
+                        <Switch defaultChecked onChange={onChange} />;
+                    </div>
+
+                    <div className="flex justify-end">
+                        <Button className='bg-slate-500 text-white' htmlType="submit">
+                            {t?.save}
+                        </Button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default Setting;

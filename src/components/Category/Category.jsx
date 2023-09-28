@@ -1,52 +1,50 @@
 
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import CardAuthor from "../UI/Card/Author/CardAuthor";
+import CardBook from "../UI/Card/Book/CardBook";
 
-const Category = () => {
-  const [category, setCategory] = useState([
-    {
-      title: "Temuriylar davri",
-      link: "/",
-    },
-    {
-      title: "Jadid adabiyoti ",
-      link: "/",
-    },
-    {
-      title: "Sovet davri ",
-      link: "/",
-    },
-    {
-      title: "Mustaqillik davri",
-      link: "/",
-    },
-  ]);
-  return (
-    <div className="p-8 w-full ">
-      <h1 className="text-center text-[#C9AC8C] text-[31px] mb-[21px]">
-        Asosiy kategoriyalar
-      </h1>
+const Category = ({t}) => {
+    return (
+        <section className='py-[50px]'>
+            <div className='container'>
+                <div className='wrapper'>
+                    <h2 className='text-[#C9AC8C] text-center uppercase text-[31px] font-["Rotter"] mb-5'>{t?.mainCategories}</h2>
+                    <nav className='mb-10'>
+                        <ul className='flex items-center justify-center gap-x-[49px] text-[20px] text-gray-400'>
+                            <li className='p-[10px]'>
+                                <a href="#">Temuriylar davri </a>
+                            </li>
+                            <li className='p-[10px]'>
+                                <a href="#">Jadid adabiyoti  </a>
+                            </li>
+                            <li className='p-[10px]'>
+                                <a href="#">Sovet davri  </a>
+                            </li>
+                            <li className='p-[10px]'>
+                                <a href="#">Mustaqillik davri </a>
+                            </li>
+                        </ul>
+                    </nav>
 
-      <nav className="mx-auto block ">
-        <ul className="flex gap-x-[49px] justify-center">
-          {category.length
-            ? category.map((link) => {
-                return (
-                  <li className="p-[10px]">
-                    <NavLink
-                      to="/"
-                      className="font-sans text-[20px] text-[rgba(255, 255, 255, 0.60)]"
-                    >
-                      {link?.title}
-                    </NavLink>
-                  </li>
-                );
-              })
-            : ""}
-        </ul>
-      </nav>
-    </div>
-  );
+                    <div className="flex items-center justify-center flex-wrap gap-x-[37.22px] gap-y-[43.85px]">
+                        {
+                            "HELLOWORLD!".split("").map((item) => {
+                                return <CardAuthor/>
+                            })
+                        }
+                        
+                    </div>
+
+                    {/* <div className="grid grid-cols-7 gap-x-[35px] gap-y-[52px]">
+                        {
+                            "HELLOWORLD!HEY".split("").map((item) => {
+                                return <CardBook/>
+                            })
+                        }
+                    </div> */}
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default Category;

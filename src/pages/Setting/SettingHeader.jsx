@@ -1,43 +1,26 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+
+import  {NavLink} from "react-router-dom";
 import "./style.scss";
+const SettingHeader = ({t}) => {
+    return (
+        <header className="bg-[#E5E5E5]">
+            <div className="container">
 
+                <ul className="flex">
+                    <li className="w-1/4 mx-1">
+                        <NavLink to="/settings/my-account" className="p-5 block mx-[5px] mt-[5px] w-full bg-[#F3F6F9]">{t?.profile}</NavLink>
+                    </li>
+                    <li className="w-1/4 mx-1">
+                        <NavLink to="/settings/security" className="p-5 block mx-[5px] mt-[5px] w-full bg-[#F3F6F9]">{t?.security}</NavLink>
+                    </li>
+                    <li className="w-1/4 mx-1">
+                        <NavLink to="/settings/setting" className="p-5 block mx-[5px] mt-[5px] w-full bg-[#F3F6F9]">{t?.settings}</NavLink>
+                    </li>
+                </ul>
 
-const SettingHeader = () => {
-  return (
-   
-      <header className="bg-[#e5e5e5]">
-        <div className="container">
-          <ul className="flex ">
-            <li className="w-1/5 mx-1">
-              <NavLink
-                className="p-5 block mx-[5px]  mt-[5px] w-full bg-[#f3f6f9]"
-                to="/settings/my-account"
-              >
-                Profil
-              </NavLink>
-            </li>
-            <li className="w-1/5  mx-1">
-              <NavLink
-                className="p-5 block  mx-[5px] mt-[5px] w-full bg-[#f3f6f9]"
-                to="/settings/security"
-              >
-                Hafsizlik
-              </NavLink>
-            </li>
-            <li className="w-1/5 mx-1">
-              <NavLink
-                className="p-5 block  mx-[5px] mt-[5px] w-full bg-[#f3f6f9]"
-                to="/settings/setting"
-              >
-                Sozlamalar
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </header>
-   
-  );
+            </div>
+        </header>
+    );
 };
 
 export default SettingHeader;
